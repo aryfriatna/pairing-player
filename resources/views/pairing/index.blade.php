@@ -74,7 +74,7 @@
                                             @php
                                                 $pair = $pairings->firstWhere(
                                                     fn($p) => $p->region_id == $region->id &&
-                                                        $p->course_name == $course &&
+                                                        $p->teebox_name == $course &&
                                                         $p->teebox == str_pad($tee, 2, '0', STR_PAD_LEFT) &&
                                                         $p->slot_number == $slot &&
                                                         $p->flight == $flight,
@@ -194,7 +194,7 @@
                 event_id: {{ $event->id }},
                 player_id: playerId,
                 region_id: parseInt(cell.dataset.region),
-                course_name: cell.dataset.course,
+                teebox_name: cell.dataset.course,
                 teebox: cell.dataset.tee,
                 slot_number: parseInt(cell.dataset.slot),
                 flight: cell.dataset.flight

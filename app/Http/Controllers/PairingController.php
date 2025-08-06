@@ -20,11 +20,12 @@ class PairingController extends Controller
 
     public function set(Request $request)
     {
+        // dd($request->all());
         $validated = $request->validate([
             'event_id' => 'required|exists:events,id',
             'player_id' => 'required|exists:players,id',
             'region_id' => 'required|exists:regions,id',
-            'course_name' => 'required|string',
+            'teebox_name' => 'required|string',
             'teebox' => 'required|string',
             'slot_number' => 'required|integer|min:1|max:4',
             'flight' => 'required|in:A,B,C',
